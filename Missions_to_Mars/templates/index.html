@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission to Mars</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <!-- JUMBORON HEADER -->
+    <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get that data!</a></p>
+      </div>
+
+    <!-- LATEST NEWS -->
+    <div class="latest-news">
+        <h2> Latest Mars News</h2>
+        <h3 class="headline"> {{ mars_info.news.news_title }}</h3>
+        <h5 class="lede"> {{ mars_info.news.news_p }}</h5>
+    </div>
+
+    <!-- FEATURED IMAGE AND FACTS TABLE -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Featured Mars Image</h2>
+                <img src="{{mars_info.featured_image}}" alt="featured">
+            </div>        
+            <div class="col-md-4">
+                <h3>Mars Facts</h3>
+                {{ mars_info.facts | safe}}
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- HEMISPHERES -->
+    <div class="hemispheres">
+        <header>
+            <h2>Mars Hemispheres</h2>
+            <hr>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class = "col-md-6">
+                    <div class="card">
+                        <img class="card-img-top" src="{{mars_info.hemispheres[0].img_url}}" alt="hemisphere-0 image">
+                        <div class="card-body">
+                          <p class="card-text">{{ mars_info.hemispheres[0].title }} Enhanced</p>
+                        </div>
+                      </div> 
+                </div>
+                <div class = "col-md-6">
+                    <div class="card">
+                        <img class="card-img-top" src="{{mars_info.hemispheres[1].img_url}}" alt="hemisphere-1 image">
+                        <div class="card-body">
+                          <p class="card-text">{{ mars_info.hemispheres[1].title }} Enhanced</p>
+                        </div>
+                      </div> 
+                </div>
+                <div class = "col-md-6">
+                    <div class="card">
+                        <img class="card-img-top" src="{{mars_info.hemispheres[2].img_url}}" alt="hemisphere-2 image">
+                        <div class="card-body">
+                          <p class="card-text">{{ mars_info.hemispheres[2].title }} Enhanced</p>
+                        </div>
+                      </div> 
+                </div>
+                <div class = "col-md-6">
+                    <div class="card">
+                        <img class="card-img-top" src="{{mars_info.hemispheres[3].img_url}}" alt="hemisphere-3 image">
+                        <div class="card-body">
+                          <p class="card-text">{{ mars_info.hemispheres[3].title }} Enhanced</p>
+                        </div>
+                      </div> 
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>
